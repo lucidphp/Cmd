@@ -9,13 +9,12 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests;
+namespace Lucid\Cmd\Tests;
 
-use Lucid\CommandBus;
-use Lucid\CommandInterface;
-use Lucid\Middleware\DelegateInterface;
-use Lucid\Middleware\MiddlewareInterface;
-use Lucid\Middleware\Middlewares;
+use Lucid\Cmd\CommandBus;
+use Lucid\Cmd\CommandInterface;
+use Lucid\Cmd\Middleware\DelegateInterface;
+use Lucid\Cmd\Middleware\Middlewares;
 
 /**
  * Class CommandBusTest

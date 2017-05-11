@@ -16,7 +16,7 @@ namespace Lucid\Cmd\Middleware;
  * @package Lucid
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-class Middlewares implements PoolInterface {
+final class Middlewares implements PoolInterface {
     /** @var MiddlewareInterface[] */
     private $middlewares;
 

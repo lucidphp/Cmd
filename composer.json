@@ -1,6 +1,5 @@
 {
-    "name": "simple-bus/simple-bus",
-    "type": "package",
+    "name": "lucid/cmd",
     "license": "MIT",
     "authors": [
         {
@@ -19,12 +18,12 @@
 
     "autoload": {
         "psr-4": {
-            "SimpleBus\\": "src/"
+            "Lucid\\Cmd\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SimpleBus\\Tests\\": "tests/"
+            "Lucid\\Cmd\\Tests\\": "tests/"
         }
     }
 }

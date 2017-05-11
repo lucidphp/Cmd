@@ -18,7 +18,8 @@ use Interop\Container\ContainerInterface;
  * @package Lucid\Container
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-final class CommandHandlerResolver implements CommandHandlerResolverInterface {
+final class CommandHandlerResolver implements CommandHandlerResolverInterface
+{
     /** @var ContainerInterface */
     private $container;
     /** @var array */
@@ -30,13 +31,15 @@ final class CommandHandlerResolver implements CommandHandlerResolverInterface {
      * @param ContainerInterface $container
      * @param array              $handlers
      */
-    public function __construct(ContainerInterface $container, array $handlers) {
+    public function __construct(ContainerInterface $container, array $handlers)
+    {
         $this->container = $container;
         $this->handlers = $handlers;
     }
 
     /** @inheritdoc */
-    public function resolve($commandClass) {
+    public function resolve($commandClass) : ?CommandHandlerInterface
+    {
         if (!isset($this->handlers[$commandClass]) || !$this->container->has($this->handlers[$commandClass])) {
             throw new \InvalidArgumentException(sprintf('No handler configured for "%s".', $commandClass));
         }

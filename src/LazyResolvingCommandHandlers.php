@@ -16,7 +16,8 @@ namespace Lucid\Cmd;
  * @package Lucid\Container
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-final class LazyResolvingCommandHandlers implements CommandHandlerManager {
+final class LazyResolvingCommandHandlers implements CommandHandlerManager
+{
 
     /**
      * @var CommandHandlerResolverInterface
@@ -39,12 +40,14 @@ final class LazyResolvingCommandHandlers implements CommandHandlerManager {
     }
 
     /** {@inheritdoc} */
-    public function register($commandClass, CommandHandlerInterface $handler) {
+    public function register($commandClass, CommandHandlerInterface $handler) : void
+    {
         $this->handlers->register($commandClass, $handler);
     }
 
     /** {@inheritdoc} */
-    public function getHandler($commandClass) {
+    public function getHandler($commandClass) : ?CommandHandlerInterface
+    {
         try {
             return $this->resolver->resolve($commandClass);
         } catch (\InvalidArgumentException $e) {

@@ -11,5 +11,6 @@
 
 namespace Lucid\Cmd;
 
-interface CommandInterface {
+interface CommandInterface
+{
 }

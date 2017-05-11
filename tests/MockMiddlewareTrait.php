@@ -9,9 +9,9 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests;
+namespace Lucid\Cmd\Tests;
 
-use Lucid\Middleware\MiddlewareInterface;
+use Lucid\Cmd\Middleware\MiddlewareInterface;
 
 trait MockMiddlewareTrait {
     private function mockMiddleware(\Closure $handle = null) {

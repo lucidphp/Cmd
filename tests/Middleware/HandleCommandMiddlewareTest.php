@@ -9,14 +9,14 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests\Middleware;
+namespace Lucid\Cmd\Tests\Middleware;
 
-use Lucid\CommandHandlerInterface;
-use Lucid\CommandHandlerManager;
-use Lucid\CommandInterface;
-use Lucid\Middleware\Delegate;
-use Lucid\Middleware\HandleCommandMiddleware;
-use Lucid\Middleware\Middlewares;
+use Lucid\Cmd\CommandHandlerInterface;
+use Lucid\Cmd\CommandHandlerManager;
+use Lucid\Cmd\CommandInterface;
+use Lucid\Cmd\Middleware\Delegate;
+use Lucid\Cmd\Middleware\HandleCommandMiddleware;
+use Lucid\Cmd\Middleware\Middlewares;
 
 class HandleCommandMiddlewareTest extends \PHPUnit_Framework_TestCase {
 

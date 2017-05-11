@@ -22,5 +22,5 @@ interface CommandHandlerResolverInterface {
      * @throws \InvalidArgumentException
      * @return CommandHandlerInterface
      */
-    public function resolve($commandClass);
+    public function resolve($commandClass) : ?CommandHandlerInterface;
 }

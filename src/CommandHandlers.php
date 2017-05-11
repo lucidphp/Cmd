@@ -16,18 +16,21 @@ namespace Lucid\Cmd;
  * @package Lucid
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-class CommandHandlers implements CommandHandlerManager {
+class CommandHandlers implements CommandHandlerManager
+{
     /** @var CommandHandlerInterface[] */
     private $handlers = [];
 
     /** {@inheritdoc} */
-    public function register($commandClass, CommandHandlerInterface $handler) {
+    public function register($commandClass, CommandHandlerInterface $handler) : void
+    {
         $this->assertCommandClass($commandClass);
         $this->handlers[$commandClass] = $handler;
     }
 
     /** {@inheritdoc} */
-    public function getHandler($commandClass) {
+    public function getHandler($commandClass) : ?CommandHandlerInterface
+    {
         $this->assertCommandClass($commandClass);
 
         return isset($this->handlers[$commandClass]) ? $this->handlers[$commandClass] : null;
@@ -37,7 +40,8 @@ class CommandHandlers implements CommandHandlerManager {
      * @param $commandClass
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      */
-    private function assertCommandClass($commandClass) {
+    private function assertCommandClass($commandClass) : void
+    {
         if (is_subclass_of($commandClass, CommandInterface::class)) {
             return;
         }

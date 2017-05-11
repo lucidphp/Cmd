@@ -12,5 +12,5 @@
 namespace Lucid\Cmd;
 
 interface CommandBusInterface {
-    public function handle(CommandInterface $command);
+    public function handle(CommandInterface $command) : void;
 }

@@ -43,9 +43,7 @@ class HandleCommandMiddleware implements MiddlewareInterface {
             throw new \RuntimeException(sprintf('No handler for command "%s".', $class));
         }
 
-        $method = $this->getMethodName($class);
-
-        if (!method_exists($handler, $method)) {
+        if (!method_exists($handler, $method = $this->getMethodName($class) )) {
             throw new \RuntimeException(sprintf('Expected handler to implement %s().', $method));
         }
 

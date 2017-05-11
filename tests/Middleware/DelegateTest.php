@@ -9,14 +9,12 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests\Middleware;
+namespace Lucid\Cmd\Tests\Middleware;
 
-use SebastianBergmann\PHPLOC\CLI\Command;
-use Lucid\CommandInterface;
-use Lucid\Middleware\Delegate;
-use Lucid\Middleware\Middlewares;
-use Lucid\Middleware\PoolInterface;
-use Lucid\Tests\MockMiddlewareTrait;
+use Lucid\Cmd\CommandInterface;
+use Lucid\Cmd\Middleware\Delegate;
+use Lucid\Cmd\Middleware\PoolInterface;
+use Lucid\Cmd\Tests\MockMiddlewareTrait;
 
 /**
  * Class DelegateTest

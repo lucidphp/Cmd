@@ -9,10 +9,10 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests\Middleware;
+namespace Lucid\Cmd\Tests\Middleware;
 
-use Lucid\Middleware\Middlewares;
-use Lucid\Tests\MockMiddlewareTrait;
+use Lucid\Cmd\Middleware\Middlewares;
+use Lucid\Cmd\Tests\MockMiddlewareTrait;
 
 /**
  * Class MiddlewaresTest

@@ -19,7 +19,8 @@ use Lucid\Cmd\Middleware\PoolInterface;
  * @package Lucid
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-class CommandBus implements CommandBusInterface {
+class CommandBus implements CommandBusInterface
+{
     /** @var PoolInterface */
     private $middleware;
 
@@ -28,12 +29,14 @@ class CommandBus implements CommandBusInterface {
      *
      * @param PoolInterface $middlewares
      */
-    public function __construct(PoolInterface $middlewares) {
+    public function __construct(PoolInterface $middlewares)
+    {
         $this->middleware = $middlewares;
     }
 
     /** {@inheritdoc} */
-    public function handle(CommandInterface $command) {
+    public function handle(CommandInterface $command) : void
+    {
         $delegate = new Delegate($this->middleware);
         $delegate($command);
     }

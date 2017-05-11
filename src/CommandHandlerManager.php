@@ -21,7 +21,7 @@ interface CommandHandlerManager {
      * @param CommandHandlerInterface $handler
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      */
-    public function register($commandClass, CommandHandlerInterface $handler);
+    public function register($commandClass, CommandHandlerInterface $handler) : void;
 
     /**
      * @param $commandClass
@@ -29,5 +29,5 @@ interface CommandHandlerManager {
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      * @return CommandHandlerInterface|null
      */
-    public function getHandler($commandClass);
+    public function getHandler($commandClass) : ?CommandHandlerInterface;
 }

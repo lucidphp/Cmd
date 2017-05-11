@@ -9,11 +9,11 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests;
+namespace Lucid\Cmd\Tests;
 
-use Lucid\CommandHandlerInterface;
-use Lucid\CommandHandlers;
-use Lucid\CommandInterface;
+use Lucid\Cmd\CommandHandlerInterface;
+use Lucid\Cmd\CommandHandlers;
+use Lucid\Cmd\CommandInterface;
 
 /**
  * Class CommandHandlersTest

@@ -9,10 +9,10 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests;
+namespace Lucid\Cmd\Tests;
 
-use Lucid\CommandHandlerInterface;
-use Lucid\CommandHandlerResolver;
+use Lucid\Cmd\CommandHandlerInterface;
+use Lucid\Cmd\CommandHandlerResolver;
 use Interop\Container\ContainerInterface;
 
 /**

@@ -9,13 +9,13 @@
  * that was distributed with this package.
  */
 
-namespace Lucid\Tests;
+namespace Lucid\Cmd\Tests;
 
 use Interop\Container\ContainerInterface;
-use Lucid\CommandHandlerInterface;
-use Lucid\CommandHandlers;
-use Lucid\LazyClosureCommandHandlerResolver;
-use Lucid\LazyResolvingCommandHandlers;
+use Lucid\Cmd\CommandHandlerInterface;
+use Lucid\Cmd\CommandHandlers;
+use Lucid\Cmd\LazyClosureCommandHandlerResolver;
+use Lucid\Cmd\LazyResolvingCommandHandlers;
 
 class LazyResolvingCommandHandlersTest extends \PHPUnit_Framework_TestCase {
     /** @test */

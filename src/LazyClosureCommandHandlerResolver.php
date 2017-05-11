@@ -18,7 +18,8 @@ use Closure;
  * @package Lucid
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
-final class LazyClosureCommandHandlerResolver implements CommandHandlerResolverInterface {
+final class LazyClosureCommandHandlerResolver implements CommandHandlerResolverInterface
+{
     /**
      * @var \Closure
      */
@@ -33,12 +34,14 @@ final class LazyClosureCommandHandlerResolver implements CommandHandlerResolverI
      *
      * @param Closure $closure
      */
-    public function __construct(Closure $closure) {
+    public function __construct(Closure $closure)
+    {
         $this->closure = $closure;
     }
 
     /** {@inheritdoc} */
-    public function resolve($commandClass) {
+    public function resolve($commandClass) : CommandHandlerInterface
+    {
         $cl = $this->closure;
         $handler = $cl($commandClass);
 
