@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the Lucid package
@@ -21,7 +21,7 @@ interface CommandHandlerManager {
      * @param CommandHandlerInterface $handler
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      */
-    public function register($commandClass, CommandHandlerInterface $handler) : void;
+    public function register(string $commandClass, CommandHandlerInterface $handler) : void;
 
     /**
      * @param $commandClass
@@ -29,5 +29,5 @@ interface CommandHandlerManager {
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      * @return CommandHandlerInterface|null
      */
-    public function getHandler($commandClass) : ?CommandHandlerInterface;
+    public function getHandler(string $commandClass) : ?CommandHandlerInterface;
 }

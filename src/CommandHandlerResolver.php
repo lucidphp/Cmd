@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the vufis2 package
@@ -38,7 +38,7 @@ final class CommandHandlerResolver implements CommandHandlerResolverInterface
     }
 
     /** @inheritdoc */
-    public function resolve($commandClass) : ?CommandHandlerInterface
+    public function resolve(string $commandClass) : ?CommandHandlerInterface
     {
         if (!isset($this->handlers[$commandClass]) || !$this->container->has($this->handlers[$commandClass])) {
             throw new \InvalidArgumentException(sprintf('No handler configured for "%s".', $commandClass));

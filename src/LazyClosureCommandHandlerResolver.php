@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the vufis2 package
@@ -40,7 +40,7 @@ final class LazyClosureCommandHandlerResolver implements CommandHandlerResolverI
     }
 
     /** {@inheritdoc} */
-    public function resolve($commandClass) : CommandHandlerInterface
+    public function resolve(string $commandClass) : CommandHandlerInterface
     {
         $cl = $this->closure;
         $handler = $cl($commandClass);

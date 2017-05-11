@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the vufis2 package
@@ -40,13 +40,13 @@ final class LazyResolvingCommandHandlers implements CommandHandlerManager
     }
 
     /** {@inheritdoc} */
-    public function register($commandClass, CommandHandlerInterface $handler) : void
+    public function register(string $commandClass, CommandHandlerInterface $handler) : void
     {
         $this->handlers->register($commandClass, $handler);
     }
 
     /** {@inheritdoc} */
-    public function getHandler($commandClass) : ?CommandHandlerInterface
+    public function getHandler(string $commandClass) : ?CommandHandlerInterface
     {
         try {
             return $this->resolver->resolve($commandClass);

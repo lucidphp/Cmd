@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the vufis2 package
@@ -22,5 +22,5 @@ interface CommandHandlerResolverInterface {
      * @throws \InvalidArgumentException
      * @return CommandHandlerInterface
      */
-    public function resolve($commandClass) : ?CommandHandlerInterface;
+    public function resolve(string $commandClass) : ?CommandHandlerInterface;
 }

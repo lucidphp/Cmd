@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This File is part of the Lucid package
@@ -22,14 +22,14 @@ class CommandHandlers implements CommandHandlerManager
     private $handlers = [];
 
     /** {@inheritdoc} */
-    public function register($commandClass, CommandHandlerInterface $handler) : void
+    public function register(string $commandClass, CommandHandlerInterface $handler) : void
     {
         $this->assertCommandClass($commandClass);
         $this->handlers[$commandClass] = $handler;
     }
 
     /** {@inheritdoc} */
-    public function getHandler($commandClass) : ?CommandHandlerInterface
+    public function getHandler(string $commandClass) : ?CommandHandlerInterface
     {
         $this->assertCommandClass($commandClass);
 
@@ -40,7 +40,7 @@ class CommandHandlers implements CommandHandlerManager
      * @param $commandClass
      * @throws \InvalidArgumentException if $commandClass is an invalid command class.
      */
-    private function assertCommandClass($commandClass) : void
+    private function assertCommandClass(string $commandClass) : void
     {
         if (is_subclass_of($commandClass, CommandInterface::class)) {
             return;
