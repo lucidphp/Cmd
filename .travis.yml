@@ -1,0 +1,32 @@
+sudo: false
+
+language: php
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+      env:
+
+before_install:
+  - composer self-update
+  #- composer require --dev satooshi/php-coveralls:dev-master object-calisthenics/phpcs-calisthenics-rules:^2.0
+
+install:
+  - composer install --prefer-source --no-interaction
+  - if [[ ! $(php -m | grep -i xdebug) ]]; then pecl install xdebug; fi;
+  - phpenv rehash
+  - mkdir -p coverage
+
+script:
+  - ./vendor/bin/phpunit --verbose --coverage-clover coverage/clover.xml
+  #- ./vendor/bin/phpcs --config-set installed_paths vendor/object-calisthenics/phpcs-calisthenics-rules/src
+  - ./vendor/bin/phpcs --standard=PSR2 --ignore=vendor/* src tests
+  #- ./vendor/bin/phpcs --standard=ObjectCalisthenics src
+
+after_script:
+  - ./vendor/bin/coveralls
+
+notififation:
+  on_success: never
+  on_failure: always
