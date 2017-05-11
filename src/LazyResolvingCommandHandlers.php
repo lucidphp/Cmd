@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 /*
- * This File is part of the vufis2 package
+ * This File is part of the Lucid\Cmd package
  *
  * (c) iwyg <mail@thomas-appel.com>
  *
@@ -13,7 +13,7 @@ namespace Lucid\Cmd;
 
 /**
  * Class CommandHandlers
- * @package Lucid\Container
+ * @package Lucid\Cmd
  * @author  Thomas Appel <mail@thomas-appel.com>
  */
 final class LazyResolvingCommandHandlers implements CommandHandlerManager
