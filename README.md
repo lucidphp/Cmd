@@ -56,7 +56,7 @@ Example below shows the default configuration.
 ```php
 <?php
 
-use SimpleBus\Middleware\HandleCommandMiddleware;
+use Lucid\Cmd\Middleware\HandleCommandMiddleware;
 
 return [
 ...
@@ -71,7 +71,7 @@ return [
 
 ## Usage
 
-The command bus exposes one method `handle()` which takes an instance of `SimpleBus\CommandInterface` as its only argument.
+The command bus exposes one method `handle()` which takes an instance of `Lucid\Cmd\CommandInterface` as its only argument.
 
 ```php
 <?php
@@ -92,9 +92,9 @@ Below an example of a validating middleware:
 <?php
 namespace Acme\Commanding;
 
-use SimpleBus\CommandInterface;
-use SimpleBus\Middleware\DelegateInterface;
-use SimpleBus\Middleware\MiddlewareInterface;
+use Lucid\Cmd\CommandInterface;
+use Lucid\Cmd\Middleware\DelegateInterface;
+use Lucid\Cmd\Middleware\MiddlewareInterface;
 
 class MyFancyMiddleware implements MiddlewareInterface {
     public function __construct(\Acme\Validator $validator) {...}
